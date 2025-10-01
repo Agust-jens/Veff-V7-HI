@@ -1,0 +1,10 @@
+nav ul {
+  display: flex;
+  gap: $spacing-unit;
+  list-style: none;
+}
+
+nav a {
+  color: $primary-color;
+  text-decoration: none;
+}

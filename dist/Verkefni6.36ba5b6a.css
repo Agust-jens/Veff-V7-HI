@@ -1,0 +1,37 @@
+:root {
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+  --max-width: 1100px;
+  --grid-color: #a78fef40;
+  --grid-repeating-width: calc(100% / var(--columns));
+  --grid-column-width: calc((100% / var(--columns))  - var(--gutter));
+  --grid-background-width: calc(100% + var(--gutter));
+  --grid-background-columns: repeating-linear-gradient(to right, var(--grid-color), var(--grid-color) var(--grid-column-width), transparent var(--grid-column-width), transparent var(--grid-repeating-width));
+}
+
+html {
+  position: relative;
+}
+
+html:before {
+  content: "";
+  width: calc(100% - (2 * var(--offset)));
+  max-width: var(--max-width);
+  background-image: var(--grid-background-columns);
+  background-size: var(--grid-background-width) 100%;
+  z-index: 1000;
+  pointer-events: none;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  inset: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:before {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Verkefni6.36ba5b6a.css.map */
